@@ -2,7 +2,7 @@
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-3.0-0baaaa.svg)](CODE_OF_CONDUCT.md)
 [![GitHub license](https://img.shields.io/github/license/TheMonHub/LUMI.svg)](LICENSE)
-[![Build](https://github.com/teamSHIRO/KURO/actions/workflows/build.yml/badge.svg)](https://github.com/TheMonHub/LUMI/actions)
+[![Build](https://github.com/TheMonHub/LUMI/actions/workflows/build.yml/badge.svg)](https://github.com/TheMonHub/LUMI/actions)
 
 A game engine that is not a game engine or maybe a framework. Written in C.
 
