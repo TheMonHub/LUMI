@@ -8,6 +8,8 @@ This project is focused on being an opinionated framework or game engine.
 
 Statically typed lua is planned but not yet implemented for now.
 
+Possibly use the miniaudio
+
 The `lumi` executable acts as a command line tool which can be used to:
 - Create a new project from a template
 - Run a project from the source – referred to as a run process
