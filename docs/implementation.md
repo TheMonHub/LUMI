@@ -1,6 +1,6 @@
 # Implementation of LUMI
 
-This file is intended to list the planned features, and all the current
+This file is intended to list the planned features and all the current
 plans for the implementation of LUMI 1.0. 
 A personal note for implementing LUMI
 
@@ -22,7 +22,6 @@ to follow this structure.
 A lumi project will contain:
 - A `lumi.conf` file
 - A `src` directory
-- A `shared` directory
 - A `res` directory
 
 All the codes and scripts are referred to as `lua` files.
@@ -47,26 +46,19 @@ It can also be used to:
           `atlas:get_texture(texture_name)`. Unplanned feature.
     - Other build options
 
-Inside the `src` directory, there will be a `scenes` directory.
-Inside it, there must be subdirectories for each scene.
+Inside the `src` directory, there must be subdirectories for each scene.
 Inside each scene directory, there must be a `main.lua` file.
 There should not be any other files than the scripts.
 Furthermore, inside the `src` directory, there should be a `start.lua` file.
 Containing the code to run when the project is started.
 The scenes are discovered automatically by the build system.
 
-Inside the `shared` directory, it will contain all the code that should be
-shared between all scenes. It is used to store the code shared between
-the scenes such as modules, classes, etc. It may contain subdirectories.
-This directory can be used in `require` statements.
-For an example of `require` a module called `module`,
-```
-require("shared.module")
-```
-
 Inside the `res` directory, it will contain all the resources of the project
 (images, models, sounds, etc.). It may contain subdirectories. The scripts
 can access to the resources using the engine's resource manager API.
+Based on the build options, the resources may be packed into a single file,
+split into multiple files, or shipped as-is into a specific directory relative
+to the executable root. Lua modules will also be located in the `res` directory.
 
 The project execution flow is as follows:
 - The engine starts and initializes
@@ -79,7 +71,7 @@ rendering (wrapping the vulkan) and input handling.
 
 The engine will use vulkan as the rendering backend and may use software rendering
 if configured to do so. macOS support will use MoltenVK. OpenGL support is not
-planned.
+supported.
 
 It uses LuaJIT as the scripting language.
 
@@ -88,6 +80,9 @@ called `run`. The `start` function will be called before the first `run` call.
 The `run` function will be called in a loop and yields the loop until it returns to be
 called again. Code and initialization logic are heavily unrecommended to be placed outside
 of functions. Any other function is allowed.
+
+There should be a way for `start.lua` to override the default first scene.
+
 ```
 local scene = {}
 
@@ -120,10 +115,4 @@ end
 return scene
 ```
 
-Talking about the API, the engine will provide a way to access to the resource manager,
-window, input, rendering, etc. The API may be extended using plugins, which is a planned
-feature using the `lumi.conf` file to import plugins.
-This feature is not yet planned.
-
-
-This file was written by `TheMonHub` | Last updated `2026-04-18` | All rights reserved
+This file was written by `TheMonHub` | Last updated `2026-04-20` | All rights reserved

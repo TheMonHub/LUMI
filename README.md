@@ -11,7 +11,7 @@ A game engine that is not a game engine or maybe a framework. Written in C.
 - Window management
 - Input management
 - Rendering through Vulkan
-- Audio
+- Audio playback
 - Networking
 - Lua scripting
 
