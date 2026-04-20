@@ -49,9 +49,9 @@ Please make sure all the above tools are locatable from your shell for the scrip
 
 Here are the steps to contribute to the project:
 1. If you didn't have write access to the repository, fork the repository to your own account.
-2. Create a new branch from `main`.
+2. Create a new branch from `develop`.
 3. Implement your feature or fix in your branch.
-4. Open a Pull Request (PR) back into `main`.
+4. Open a Pull Request (PR) back into `develop`.
 5. The maintainer will review your changes and provide feedback.
 
 ---
