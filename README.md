@@ -20,7 +20,7 @@ A game engine that is not a game engine or maybe a framework. Written in C.
 ~~To get started with LUMI, please read the [**getting started**](docs/getting_started.md) guide.
 You can also check out the documentation for more details.~~
 
-> [!WARN]
+> [!WARNING]
 > LUMI is currently in development, and the documentation is not yet complete.
 
 ## Building
